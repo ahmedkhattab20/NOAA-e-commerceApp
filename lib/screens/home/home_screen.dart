@@ -2,6 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylish/constants.dart';
+import 'package:stylish/models/Category.dart';
+import 'package:stylish/models/Product.dart';
+import 'package:stylish/screens/components/categories.dart';
+import 'package:stylish/screens/components/new_arrival.dart';
+import 'package:stylish/screens/components/popular.dart';
+import 'package:stylish/screens/components/product_card.dart';
+import 'package:stylish/screens/components/search_form.dart';
+import 'package:stylish/screens/components/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -36,35 +44,39 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Explore',style:Theme.of(context).textTheme.headline4!.copyWith(fontWeight:FontWeight.w500, color: Colors.black
-        ),),
-            Text('best Outfits for you',style:TextStyle(fontSize: 18)
+            Text(
+              'Explore',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline4!
+                  .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
             ),
-Form(child: TextFormField(
-  decoration: InputDecoration(
-    filled: true,
-    fillColor: Colors.white,
-    border:  const
-    OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
-      borderSide: BorderSide.none
-    )
-  ),
+            const Text('best Outfits for you', style: TextStyle(fontSize: 18)),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: defaultPadding),
+              child: searchForm(),
+            ),
+            const Categories(),
+            const SizedBox(height: defaultPadding / 2,),
+            const NewArrival(),
+            const SizedBox(height: defaultPadding / 2,),
+            const Popular(),
 
-))
+
+
+
           ],
-
         ),
       ),
-      
-      
-      
-      
     );
   }
 }
+
+
+

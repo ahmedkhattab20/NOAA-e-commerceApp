@@ -37,4 +37,13 @@ List<Product> demo_product = [
     price: 149,
     bgColor: const Color(0xFFEEEEED),
   ),
+  Product(
+    image: "assets/images/product_0.png",
+    title: "Long Sleeve Shirts",
+    price: 165,
+    bgColor: const Color(0xFFFEFBF9),
+  ),
+
+
+
 ];
