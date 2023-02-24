@@ -34,7 +34,7 @@ class NewArrival extends StatelessWidget {
                       price: demo_product[index].price,
                       press: (){
 
-Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(product: demo_product[index],)));
+Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(product: demo_product[index],)   ));
                       },
                     ),
                   ))
