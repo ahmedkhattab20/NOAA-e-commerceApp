@@ -33,7 +33,6 @@ class Popular extends StatelessWidget {
                       image: demo_product[index].image,
                       price: demo_product[index].price,
                       press: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(product: demo_product[index]),));
                       },
                     ),
                   ))
