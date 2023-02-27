@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylish/constants.dart';
 import 'package:stylish/models/Category.dart';
 import 'package:stylish/models/Product.dart';
+import 'package:stylish/screens/cart/cart_screen.dart';
 import 'package:stylish/screens/components/categories.dart';
 import 'package:stylish/screens/components/new_arrival.dart';
 import 'package:stylish/screens/components/popular.dart';
@@ -39,9 +40,18 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen(),));
+
+            },
+            icon:const  Icon(Icons.shopping_cart,color: Color.fromRGBO(
+                175, 173, 173, 0.9215686274509803)),
+          ),
+          IconButton(
             onPressed: () {},
             icon: SvgPicture.asset("assets/icons/Notification.svg"),
-          )
+          ),
+
         ],
       ),
       body: SingleChildScrollView(

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylish/constants.dart';
 import 'package:stylish/models/Product.dart';
-import 'package:stylish/screens/details/components/coloe_dot.dart';
+import 'package:stylish/screens/cart/cart_screen.dart';
+import 'package:stylish/screens/details/components/color_dot.dart';
 import 'package:stylish/screens/home/home_screen.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -17,12 +18,8 @@ class DetailsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: BackButton(
-            color: Colors.black,
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
-            }),
+        leading: IconButton(onPressed: ()=>Navigator.of(context).pop(),
+          icon:const Icon(Icons.arrow_back_ios,color: Colors.black,),) ,
         actions: [
           IconButton(
               onPressed: () {},
@@ -104,7 +101,11 @@ class DetailsScreen extends StatelessWidget {
                     child: SizedBox(
                       width: 200,
                       height: 55,
-                      child: ElevatedButton(onPressed: (){},
+                      child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen(),));
+
+                        },
                           child: const Text("Add To Cart"),
                         style: ElevatedButton.styleFrom(backgroundColor:primaryColor,shape: StadiumBorder() ),
                       ),
